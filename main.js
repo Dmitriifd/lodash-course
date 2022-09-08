@@ -1,18 +1,35 @@
-const products = {
+const users = [
+	{
+		id: 1,
+		name: 'User 1',
+	},
+	{
+		id: 2,
+		name: 'User 2',
+	},
+	{
+		id: 3,
+		name: 'User 3',
+	},
+];
+
+const obj = {
 	1: {
-		name: 'Product 1',
+		name: 'User 1',
 	},
 	2: {
-		name: 'Product 2',
-	},
+		name: 'User 2',
+	}
 }
 
-const arr = [];
+const ids = _.map(users, (user) => {
+	return user.id;
+});
 
-_.each([1, 2], (item, index) => console.log(item, index)); // или _.forEach, в массиве 2 параметр - index
+const ids2 = _.map(users, 'name'); // через строку можно получить сразу нужный элемент
 
-_.each(products, (item) => console.log(item)); // может перебирать объекты
-_.each(products, (item, key, i) => console.log(item, key, i)); // в объекте 2 параметр - получить ключ
+const user = _.map(obj, (user, id) => id); // можно перебирать объекты
 
-_.each(products, (product) => arr.push(product.name)); // push имён объекта в массив
-console.log(arr); 
+console.log(ids);
+console.log(ids2);
+console.log(user);
