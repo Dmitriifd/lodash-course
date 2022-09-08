@@ -1,35 +1,42 @@
+// Задача преобразовать масив с объектами
+
+// from
 const users = [
 	{
 		id: 1,
-		name: 'User 1',
+		status: 'active',
+		first_name: 'John',
 	},
 	{
 		id: 2,
-		name: 'User 2',
-	},
-	{
-		id: 3,
-		name: 'User 3',
+		status: 'inactive',
+		first_name: 'JoMikehn',
 	},
 ];
 
-const obj = {
-	1: {
-		name: 'User 1',
+// to
+const newUsers = [
+	{
+		id: 1,
+		firstName: 'John',
+		isActive: true,
 	},
-	2: {
-		name: 'User 2',
-	}
-}
+	{
+		id: 2,
+		firstName: 'JoMikehn',
+		isActive: false,
+	},
+];
 
-const ids = _.map(users, (user) => {
-	return user.id;
-});
+const normalizeUsers = (users) => {
+	return _.map(users, (user) => {
+		return {
+			id: user.id,
+			firstName: user.first_name,
+			isActive: user.status === 'active',
+		};
+	});
+};
 
-const ids2 = _.map(users, 'name'); // через строку можно получить сразу нужный элемент
-
-const user = _.map(obj, (user, id) => id); // можно перебирать объекты
-
-console.log(ids);
-console.log(ids2);
-console.log(user);
+const result = normalizeUsers(users);
+console.log({ result });
