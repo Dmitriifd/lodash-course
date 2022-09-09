@@ -3,19 +3,18 @@ const users = [
 		id: 1,
 		name: 'John',
 		isActive: true,
-		likes: 110,
+		age: 25,
 	},
 	{
 		id: 2,
 		name: 'Mike',
-		isActive: false,
-		likes: 30,
+		isActive: true,
+		age: 28,
 	},
 	{
 		id: 3,
 		name: 'Pit',
 		isActive: false,
-		likes: 30,
+		age: 32,
 	},
 ];
-
