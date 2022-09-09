@@ -11,4 +11,11 @@ const users = [
 		isActive: false,
 		likes: 30,
 	},
+	{
+		id: 3,
+		name: 'Pit',
+		isActive: false,
+		likes: 30,
+	},
 ];
+
