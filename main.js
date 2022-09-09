@@ -1,42 +1,37 @@
-// Задача преобразовать масив с объектами
-
-// from
 const users = [
 	{
 		id: 1,
-		status: 'active',
-		first_name: 'John',
+		name: 'John',
+		isActive: true
 	},
 	{
 		id: 2,
-		status: 'inactive',
-		first_name: 'JoMikehn',
+		name: 'Mike',
+		isActive: false
 	},
-];
+]
 
-// to
-const newUsers = [
-	{
-		id: 1,
-		firstName: 'John',
-		isActive: true,
+const products = {
+	1: {
+		name: 'Milk',
+		price: 100,
 	},
-	{
-		id: 2,
-		firstName: 'JoMikehn',
-		isActive: false,
+	2: {
+		name: 'Meat',
+		price: 300,
 	},
-];
+}
 
-const normalizeUsers = (users) => {
-	return _.map(users, (user) => {
-		return {
-			id: user.id,
-			firstName: user.first_name,
-			isActive: user.status === 'active',
-		};
-	});
-};
+const res = _.filter(users, (user) => user.name === 'Mike');
+const res2 = _.filter(users, 'isActive'); 
+const res3 = _.filter(users, ['name', 'John']); // в массиве свойство и условие
 
-const result = normalizeUsers(users);
-console.log({ result });
+// Может работать с объектами, всегда возвращает массив
+const product = _.filter(products, (product) => product.price < 150);
+
+
+
+console.log(res);
+console.log(res2);
+console.log(res3);
+console.log(product);
