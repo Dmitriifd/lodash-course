@@ -12,4 +12,3 @@ const users = [
 		likes: 30,
 	},
 ];
-
